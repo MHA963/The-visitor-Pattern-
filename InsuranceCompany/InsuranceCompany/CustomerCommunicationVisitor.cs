@@ -10,22 +10,22 @@ namespace InsuranceCompany
     {
         public void VisitCarInsurance(CarInsurance insurance)
         {
-            Console.WriteLine($"Email is sent as the element class is: {insurance.GetType()}");
+            Console.WriteLine($"{insurance.GetCommunication()}");
         }
 
         public void VisitMotorBikeInsurance(MotorBikeInsurance insurance)
         {
-            Console.WriteLine($"SMS is sent as the element class is:  {insurance.GetType()}");
+            Console.WriteLine($"{insurance.GetCommunication()}");
         }
 
         public void VisitBikeInsurance(BikeInsurance insurance)
         {
-            Console.WriteLine($"Fax is sent as the element class is: {insurance.GetType()}");
+            Console.WriteLine($"{insurance.GetCommunication()}");
         }
 
         public void VisitTruckInsurance(TruckInsurance insurance)
         {
-            Console.WriteLine($"Phone call is made as the element class is: {insurance.GetType()}");
+            Console.WriteLine($"{insurance.GetCommunication()}");
         }
     }
 }

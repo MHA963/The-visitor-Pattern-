@@ -10,22 +10,22 @@ namespace InsuranceCompany
     {
         public void VisitCarInsurance(CarInsurance insurance)
         {
-            Console.WriteLine($"Car Insurance: {insurance.GetType()}");
+            Console.WriteLine($"Car Insurance: {insurance.GetCost()}");
         }
 
         public void VisitMotorBikeInsurance(MotorBikeInsurance insurance)
         {
-            Console.WriteLine($"Motor Bike Insurance: {insurance.GetType()}");
+            Console.WriteLine($"Motor Bike Insurance: {insurance.GetCost()}");
         }
 
         public void VisitBikeInsurance(BikeInsurance insurance)
         {
-            Console.WriteLine($"Bike Insurance: {insurance.GetType()}");
+            Console.WriteLine($"Bike Insurance: {insurance.GetCost()}");
         }
 
         public void VisitTruckInsurance(TruckInsurance insurance)
         {
-            Console.WriteLine($"Truck Insurance: {insurance.GetType()}");
+            Console.WriteLine($"Truck Insurance: {insurance.GetCost()}");
         }
     }
 }
