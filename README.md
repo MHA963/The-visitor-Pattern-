@@ -107,4 +107,13 @@ sequenceDiagram
     deactivate CarInsurance
 ```
 
+The diagram shows a sequence of interactions between a Client, visitors (IVisitor, TypeVisitor, and CCVisitor), and two classes (IInsurance and CarInsurance).
+
+The Client first visits the CarInsurance using IVisitor, which is passed to TypeVisitor to access the CarInsurance.
+
+The CarInsurance class is then activated and responds to IVisitor's GetCost() method.
+
+The client then visits the CarInsurance using IVisitor again, which is passed to CCVisitor to access the CarInsurance and retrieve its communication using GetCommunication().
+
+The diagram demonstrates the Visitor design pattern, where visitors can access and perform operations on different classes without modifying them.
     
