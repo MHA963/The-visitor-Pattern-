@@ -1,5 +1,8 @@
 # SWD - The Visitor Pattern 
-Working with SOLID principales and the visitor pattern 
+### Working with SOLID principales and the visitor pattern
+The principle behind designing the visitor pattern is illustrated in the diagram below. While we provide a more detailed class diagram later on, this particular diagram depicts the fundamental design of the visitor pattern.
+![alt text](/Diagrams/start.png)
+
 
 ## Design 
 Working on the design example from [Geek Culture](https://medium.com/geekculture/design-pattern-visitor-pattern-the-most-complicated-design-pattern-with-c-code-sample-f88b608ffb4a)
