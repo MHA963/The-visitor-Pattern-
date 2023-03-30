@@ -123,8 +123,9 @@ sequenceDiagram
     
     Client->>IVisitor: VisitCarInsurance(CarInsurance)
     IVisitor->>TypeVisitor: VisitCarInsurance(CarInsurance)
-    
-    TypeVisitor->>CarInsurance: Accept(visitor)    
+
+    TypeVisitor->>IInsurance: Accept(visitor) 
+    IInsurance->>CarInsurance: Accept(visitor)    
     
     activate CarInsurance
     CarInsurance-->>IVisitor: GetCost()
@@ -132,8 +133,8 @@ sequenceDiagram
 
     Client->>IVisitor: VisitCarInsurance(CarInsurance)
     IVisitor->>CCVisitor: VisitCarInsurance(CarInsurance)
-    CCVisitor->>CarInsurance: Accept(visitor) 
-
+    CCVisitor->>IInsurance: Accept(visitor) 
+    IInsurance->>CarInsurance: Accept(visitor)   
     activate CarInsurance
     CarInsurance-->>IVisitor: GetCommunication()
     deactivate CarInsurance
