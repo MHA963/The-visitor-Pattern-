@@ -6,7 +6,49 @@ The principle behind designing the visitor pattern is illustrated in the diagram
 
 ## Design 
 Working on the design example from [Geek Culture](https://medium.com/geekculture/design-pattern-visitor-pattern-the-most-complicated-design-pattern-with-c-code-sample-f88b608ffb4a)
-Expanded Class diagram for the design provided in the example
+Expanded Class diagram for the design provided in the example below
+
+```mermaid
+classDiagram
+   
+    class Client{
+    }
+    
+    class IElement{
+        <<interface>>
+        +Accept(Visitor)
+    }
+
+    class ConcreteElement1{
+        +Accept(Visitor)
+    }
+    
+    class ConcreteElement2{
+        +Accept(Visitor)
+    }
+
+
+    class IVisitor{
+        <<interface>>
+      
+    }
+    
+    class TypeVisitor{
+
+    }
+    class CommunicationVisitor{
+
+    } 
+
+    Client -- IElement    
+    Client -- IVisitor
+    IElement -- IVisitor
+    IElement <|-- ConcreteElement2 
+    IElement <|-- ConcreteElement1
+    IVisitor <|.. TypeVisitor
+    IVisitor <|.. CommunicationVisitor
+```    
+
 ### Class Diagram
 This is a class diagram that illustrates the relationships between the classes involved in a simple insurance system. The system is designed to allow clients to purchase different types of insurance plans, including car, truck, motorbike, and bike insurance plans. The diagram shows the different classes involved in the system and their relationships.
 
