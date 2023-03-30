@@ -11,14 +11,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        var carInsurance = new CarInsurance();
-        //carInsurance.Car("Regi-1", "8240", "Toyota", "Supra", 1998, 20000, 30000, 8, 2, true);
-        var motorBikeInsurance = new MotorBikeInsurance();
         //motorBikeInsurance.MotorBike("Regi-2","8210", "Toyota", "RealFastBike", 2020,50000,1000,12,0,false);
-        var bikeInsurance = new BikeInsurance();
+        //carInsurance.Car("Regi-1", "8240", "Toyota", "Supra", 1998, 20000, 30000, 8, 2, true);
         //bikeInsurance.Bike("Regi-3", "8240", "Cube", "CubeMasterBiker3000", 2000, 3000, 1000);
-        var truckInsurance = new TruckInsurance();
         //truckInsurance.Truck("Regi-4", "8240", "Lamborghini", "MegaPlower", 2023, 300000, 0, 24, 0, false);
+        var carInsurance = new CarInsurance();
+        var motorBikeInsurance = new MotorBikeInsurance();
+        var bikeInsurance = new BikeInsurance();
+        var truckInsurance = new TruckInsurance();
         var typeVisitor = new TypeVisitor();
         var customerCommunicationVisitor = new CustomerCommunicationVisitor();
 
