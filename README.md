@@ -12,25 +12,15 @@ This is a class diagram that illustrates the relationships between the classes i
 
 ```mermaid
 classDiagram
-    
+   
     class Client{
-
-    }
-    
-    class IVisitor{
-        <<interface>>
-        +VisitCarInsurance(CarInsurance Insurance)
-        +VisitTruckInsurance(TruckInsurance Insurance)
-        +VisitBikeInsurance(CarInsurance Insurance)
-        +VisitMotorBikeInsurance(TruckInsurance Insurance)
     }
     
     class IInsurance{
         <<interface>>
         +Accept(Visitor)
-        +GetCost()
-        +GetCommunication()
     }
+
     class TruckInsurance{
         +Accept(Visitor)
         +GetCost()
@@ -44,7 +34,6 @@ classDiagram
     }
     class MotorBikeInsurance{
         +Accept(Visitor)
-        
         +GetCost()
         +GetCommunication()
     }
@@ -54,32 +43,30 @@ classDiagram
         +GetCommunication()
     }
 
+    class IVisitor{
+        <<interface>>
+        +VisitCarInsurance(CarInsurance Insurance)
+        +VisitTruckInsurance(TruckInsurance Insurance)
+        +VisitBikeInsurance(BikeInsurance Insurance)
+        +VisitMotorBikeInsurance(MotorBikeInsurance Insurance)
+    }
     
     class TypeVisitor{
-       +VisitCarInsurance(CarInsurance Insurance)
-        +VisitTruckInsurance(TruckInsurance Insurance)
-        +VisitBikeInsurance(CarInsurance Insurance)
-        +VisitMotorBikeInsurance(TruckInsurance Insurance)    
+
     }
     class CommunicationVisitor{
-       +VisitCarInsurance(CarInsurance Insurance)
-        +VisitTruckInsurance(TruckInsurance Insurance)
-        +VisitBikeInsurance(CarInsurance Insurance)
-        +VisitMotorBikeInsurance(TruckInsurance Insurance)
+
     } 
 
-    TypeVisitor ..|> IVisitor
-    CommunicationVisitor ..|> IVisitor
-    Client --> IInsurance
-    Client --> IVisitor
-    TruckInsurance --|> IInsurance
-    BikeInsurance --|> IInsurance
-    MotorBikeInsurance --|> IInsurance
-    CarInsurance --|> IInsurance
-    TruckInsurance --> IVisitor
-    BikeInsurance --> IVisitor
-    MotorBikeInsurance --> IVisitor 
-    CarInsurance --> IVisitor       
+    Client -- IInsurance    
+    Client -- IVisitor
+    IInsurance -- IVisitor : Two-way association
+    IInsurance <|-- TruckInsurance 
+    IInsurance <|-- BikeInsurance
+    IInsurance <|-- MotorBikeInsurance
+    IInsurance <|-- CarInsurance
+    IVisitor <|.. TypeVisitor
+    IVisitor <|.. CommunicationVisitor
 ```
 
 ### Sequence Diagram
